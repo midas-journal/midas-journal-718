@@ -22,8 +22,8 @@ SERVER_SOURCES Factor.cpp Geometry.cpp MarchingCubes.cpp MultiGridOctest.cpp Mul
 
 endif(BUILD_PARAVIEW_PLUGIN)
 
-ADD_EXECUTABLE(PoissonReconstruction Example.cxx vtkPoissonReconstruction.cxx Factor.cpp Geometry.cpp MarchingCubes.cpp MultiGridOctest.cpp MultiGridOctreeData.cpp )
-TARGET_LINK_LIBRARIES(PoissonReconstruction vtkHybrid)
+ADD_EXECUTABLE(PoissonReconstruction MACOSX_BUNDLE Example.cxx vtkPoissonReconstruction.cxx Factor.cpp Geometry.cpp MarchingCubes.cpp MultiGridOctest.cpp MultiGridOctreeData.cpp )
+TARGET_LINK_LIBRARIES(PoissonReconstruction ${VTK_LIBRARIES})
 
 ADD_TEST( PoissonReconstructionTest 
   ${PoissonReconstruction_BINARY_DIR}/PoissonReconstruction 
